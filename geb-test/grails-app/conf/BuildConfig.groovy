@@ -22,7 +22,7 @@ grails.project.fork = [
 ]
 
 def gebVersion = "0.12.2"
-def seleniumVersion = "2.45.0"
+def seleniumVersion = "2.48.0"
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
@@ -56,12 +56,16 @@ grails.project.dependency.resolution = {
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
 
         // Add selenium, spock dependencies and http components for geb
-        test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
-
         test "org.gebish:geb-spock:$gebVersion"
 
-        compile 'org.apache.httpcomponents:httpcore:4.3'
-        compile 'org.apache.httpcomponents:httpclient:4.3'
+        compile 'org.apache.httpcomponents:httpcore:4.4'
+        compile 'org.apache.httpcomponents:httpclient:4.5'
+
+        // Now add webdrivers
+        test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+        test "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"
+        test "org.seleniumhq.selenium:selenium-ie-driver:$seleniumVersion"
+
     }
 
     plugins {
