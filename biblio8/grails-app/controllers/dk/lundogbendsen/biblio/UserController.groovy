@@ -11,7 +11,7 @@ class UserController {
     }
 
     def reviews() {
-        String id = params.id
+        String id = params.id ?: session.userId
         if (!id) {
             flash.message = 'No ID specified in URL'
             redirect action: 'index'
