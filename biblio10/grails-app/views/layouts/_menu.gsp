@@ -17,10 +17,9 @@
                     <li><g:link controller="login" action="logout">Logout</g:link> </li>
                 </g:if>
                 <g:else>
-                    <li><a href="#">Registrer</a></li>
+                    <li><g:link controller="user" action="registrer">Registrer</g:link> </li>
                     <li><g:link controller="login" action="login">Login</g:link> </li>
                 </g:else>
-
                 <li><g:link controller="user">Brugere</g:link></li>
             </ul>
         </div><!--/.nav-collapse -->

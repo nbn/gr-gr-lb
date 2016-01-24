@@ -12,7 +12,15 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><g:link uri="/">Hjem</g:link> </li>
-                <li><a href="#about">About</a></li>
+                <g:if test="${session.userId}">
+                    <li><a href="#">${session.userId}</a></li>
+                    <li><g:link controller="login" action="logout">Logout</g:link> </li>
+                </g:if>
+                <g:else>
+                    <li><a href="#">Registrer</a></li>
+                    <li><g:link controller="login" action="login">Login</g:link> </li>
+                </g:else>
+
                 <li><g:link controller="user">Brugere</g:link></li>
             </ul>
         </div><!--/.nav-collapse -->
